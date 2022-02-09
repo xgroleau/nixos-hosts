@@ -10,10 +10,13 @@
   };
 
   outputs = { self, nixpkgs, nix-dotfiles, flake-utils }:
-    let hosts = import ./hosts;
-    in {
+    let
+      hosts = import ./hosts;
 
-      nixosConfigurations = nixpkgs.lib.mapAttrs (hostName: hostConfig:
+      lib = nixpkgs.lib.extend (self: super: { my = nix-dotfiles.lib.my; });
+
+    in {
+      nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [

@@ -16,8 +16,16 @@
 
     users.users.xgroleau = {
       isNormalUser = true;
+      shell = pkgs.zsh;
       initialPassword = "nixos";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+
+        # For embedded development
+        "plugdev"
+        "dialout"
+      ];
     };
   };
 }

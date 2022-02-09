@@ -1,5 +1,5 @@
-{ config, lib, pkgs, ... }:
-
 {
   godzilla = import ./godzilla;
+
+  mothra = import ./mothra;
 }
