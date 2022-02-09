@@ -1,0 +1,2 @@
+# nixos-hosts
+NixOS configurations
