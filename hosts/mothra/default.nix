@@ -21,8 +21,11 @@
       interfaces.enp0s25.useDHCP = true;
     };
 
+    programs.steam.enable = true;
+
     # Dualbooting, avoids time issues
     time.hardwareClockInLocalTime = true;
+
     # Enable the X11 windowing system.
     services = {
       xserver = {
