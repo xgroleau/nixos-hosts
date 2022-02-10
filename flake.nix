@@ -13,9 +13,10 @@
     let
       hosts = import ./hosts;
 
-      lib = nixpkgs.lib.extend (self: super: { my = nix-dotfiles.lib.my; });
-
+      lib =
+        nixpkgs.lib.extend (self: super: { inherit (nix-dotfiles.lib) my; });
     in {
+
       nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -26,7 +27,7 @@
               profile = nix-dotfiles.profiles.desktop;
             })
           ];
-        } hosts);
+        }) hosts;
     }
 
     # Utils of each system
@@ -36,10 +37,10 @@
         apps = {
           fmt = pkgs.writeShellApplication {
             name = "fmt";
-            runtimeInputs = with pkgs; [ nixfmt ];
+            runtimeInputs = with pkgs; [ nixfmt statix ];
             text = ''
               nixfmt ./**/*.nix
-              statix fix ${./.}
+              statix fix ./.
             '';
           };
         };

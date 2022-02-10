@@ -27,13 +27,13 @@
       # Enable CUPS to print documents. Add driver if needed
       printing.enable = true;
 
-      # Enable touchpad
-      libinput.enable = true;
-
       xserver = {
         enable = true;
         displayManager.sddm.enable = true;
         desktopManager.plasma5.enable = true;
+
+        # Enable touchpad
+        libinput.enable = true;
       };
     };
 
