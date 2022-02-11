@@ -13,11 +13,14 @@
 
     services = {
       xserver.layout = "ca";
-      udev.packages = with pkgs;
-        [
-          # For embedded
-          stlink
-        ];
+      udev = {
+        packages = with pkgs;
+          [
+            # For embedded
+            stlink
+          ];
+        extraRules = (builtins.readFile ../data/69-probe-rs.rules);
+      };
     };
 
     time.timeZone = "America/Toronto";
