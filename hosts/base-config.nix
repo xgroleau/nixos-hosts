@@ -25,6 +25,7 @@
 
     time.timeZone = "America/Toronto";
 
+    programs.zsh.enable = true;
     users.users.xgroleau = {
       isNormalUser = true;
       shell = pkgs.zsh;

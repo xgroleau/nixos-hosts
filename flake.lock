@@ -59,11 +59,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1644552281,
-        "narHash": "sha256-H3xAhYef/gZNndV2QwDPDDRxRtPRhTuBIxZCxbF+ops=",
+        "lastModified": 1644616873,
+        "narHash": "sha256-UNN7fhsHR4On98wbdcfwqsukb9FRcJWdkAGKW+RbbDM=",
         "owner": "xgroleau",
         "repo": "nix-dotfiles",
-        "rev": "9afcc504ae4aa37943b618b1cb26803be4b0c5ad",
+        "rev": "17311f27b59478a1d72ca21332badbc7097b8932",
         "type": "github"
       },
       "original": {
