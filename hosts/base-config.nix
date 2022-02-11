@@ -11,7 +11,14 @@
       '';
     };
 
-    services.xserver.layout = "ca";
+    services = {
+      xserver.layout = "ca";
+      udev.packages = with pkgs;
+        [
+          # For embedded
+          stlink
+        ];
+    };
 
     time.timeZone = "America/Toronto";
 
