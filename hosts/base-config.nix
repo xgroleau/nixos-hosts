@@ -27,7 +27,6 @@
 
     programs.zsh.enable = true;
     users = {
-      extraGroups.networkmanager = { };
       users.xgroleau = {
         isNormalUser = true;
         shell = pkgs.zsh;
