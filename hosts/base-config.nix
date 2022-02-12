@@ -19,11 +19,14 @@
             # For embedded
             stlink
           ];
+        # For embedded
         extraRules = (builtins.readFile ../data/69-probe-rs.rules);
       };
     };
 
     time.timeZone = "America/Toronto";
+
+    environment.systemPackages = with pkgs; [ vim nano curl wget firefox ];
 
     programs.zsh.enable = true;
     users.users.xgroleau = {
@@ -32,6 +35,8 @@
       initialPassword = "nixos";
       extraGroups = [
         "wheel"
+
+        "audio"
         "networkmanager"
 
         # For embedded development

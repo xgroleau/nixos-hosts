@@ -21,6 +21,7 @@
       interfaces.enp0s25.useDHCP = true;
     };
 
+    environment.systemPackages = with pkgs; [ pavucontrol ];
     programs.steam.enable = true;
 
     # Dualbooting, avoids time issues
@@ -39,8 +40,13 @@
     services.printing.enable = true;
 
     # Enable sound.
-    sound.enable = true;
-    hardware.pulseaudio.enable = true;
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
 
     system.stateVersion = "21.11";
   };

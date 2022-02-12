@@ -12,13 +12,13 @@
       };
     };
 
-    environment.systemPackages = with pkgs; [ vim nano curl wget firefox ];
-
     networking = {
       hostName = "godzilla"; # Define your hostname.
       networkmanager.enable = true;
       interfaces.wlp3s0.useDHCP = true;
     };
+
+    environment.systemPackages = with pkgs; [ pavucontrol ];
 
     # Dualbooting, avoids time issues
     time.hardwareClockInLocalTime = true;
@@ -38,8 +38,13 @@
     };
 
     # Enable sound.
-    sound.enable = true;
-    hardware.pulseaudio.enable = true;
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
 
     system.stateVersion = "21.11";
 
