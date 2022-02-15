@@ -32,10 +32,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nix-dotfiles",
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1644255659,
@@ -56,14 +53,14 @@
       "inputs": {
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1644679480,
-        "narHash": "sha256-Po/TpQAW/Be5N002On8GxuMrjb2fJP09whMId0awvq4=",
+        "lastModified": 1644768268,
+        "narHash": "sha256-ddzuIhvHoKyI14txVrZ1p6wPXECdD3maM5F5IV//jGw=",
         "owner": "xgroleau",
         "repo": "nix-dotfiles",
-        "rev": "d62818c542a817dd71c119a964db8eafc3783d38",
+        "rev": "d3bf5e0bca000582150a83c647149ef2b73340f3",
         "type": "github"
       },
       "original": {
@@ -74,6 +71,20 @@
       }
     },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1644486793,
+        "narHash": "sha256-EeijR4guVHgVv+JpOX3cQO+1XdrkJfGmiJ9XVsVU530=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1882c6b7368fd284ad01b0a5b5601ef136321292",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1644033087,
         "narHash": "sha256-beskas17YPhrcnanzywake9/z+k+xOWmavW24YUN8ng=",
@@ -89,13 +100,13 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
-        "lastModified": 1644420267,
-        "narHash": "sha256-rFJuctggkjM412OC6OGPdXogFp7czGDW05ueWqpJbj8=",
+        "lastModified": 1644525281,
+        "narHash": "sha256-D3VuWLdnLmAXIkooWAtbTGSQI9Fc1lkvAr94wTxhnTU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "98bb5b77c8c6666824a4c13d23befa1e07210ef1",
+        "rev": "48d63e924a2666baf37f4f14a18f19347fbd54a2",
         "type": "github"
       },
       "original": {
@@ -109,7 +120,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nix-dotfiles": "nix-dotfiles",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       }
     }
   },

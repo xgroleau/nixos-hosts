@@ -15,7 +15,6 @@
     networking = {
       hostName = "godzilla"; # Define your hostname.
       networkmanager.enable = true;
-      interfaces.wlp3s0.useDHCP = true;
     };
 
     environment.systemPackages = with pkgs; [ pavucontrol ];
