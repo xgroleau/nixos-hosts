@@ -37,12 +37,10 @@
     };
 
     # Enable sound.
-    security.rtkit.enable = true;
-    services.pipewire = {
+    sound.enable = true;
+    hardware.pulseaudio = {
       enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+      support32Bit = true;
     };
 
     system.stateVersion = "21.11";
