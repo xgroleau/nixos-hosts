@@ -4,7 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nix-dotfiles.url = "github:xgroleau/nix-dotfiles/main";
+    nix-dotfiles = {
+      url = "github:xgroleau/nix-dotfiles/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-utils.url = "github:numtide/flake-utils";
   };
