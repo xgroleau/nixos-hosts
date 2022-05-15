@@ -12,7 +12,8 @@
       };
     };
 
-    modules.networking.kdeconnect = true;
+    modules.networking.kdeconnect.enable = true;
+
     networking = {
       hostName = "mothra"; # Define your hostname.
       networkmanager.enable = true;

@@ -16,17 +16,16 @@
     let
       hosts = import ./hosts;
 
-      lib =
-        nixpkgs.lib.extend (self: super: { inherit (nix-dotfiles.lib) my; });
+      lib = nixpkgs.lib.extend (self: super: { my = nix-dotfiles.utils; });
     in {
-
       nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = { inherit lib; };
           modules = [
             hostConfig
             ./modules
-            (nix-dotfiles.utils.nixosConfigurationFromProfile {
+            (nix-dotfiles.utils.core.nixosConfigurationFromProfile {
               username = "xgroleau";
               profile = nix-dotfiles.profiles.desktop;
             })
@@ -66,13 +65,7 @@
 
         };
 
-        devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            git
-            nixfmt
-            statix
-            home-manager.defaultPackage.${system}
-          ];
-        };
+        devShell =
+          pkgs.mkShell { buildInputs = with pkgs; [ git nixfmt statix ]; };
       }));
 }

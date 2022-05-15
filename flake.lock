@@ -61,11 +61,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652621427,
-        "narHash": "sha256-O3X/+41fHslvkX5/OQpGGQSIl4bWYyndneHcZLa1wf4=",
+        "lastModified": 1652626056,
+        "narHash": "sha256-H3hfCdn3/Ojm0RsN9/D7oeH9+sYD1c2OSwJbRUwU2II=",
         "owner": "xgroleau",
         "repo": "nix-dotfiles",
-        "rev": "34597a0290d7a0850c2dcf2ce64ea3bfaabf6393",
+        "rev": "f3418acf469469b270c9d3b0fa933df16e97038a",
         "type": "github"
       },
       "original": {
