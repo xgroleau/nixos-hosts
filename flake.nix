@@ -27,7 +27,7 @@
             ./modules
             (nix-dotfiles.utils.core.nixosConfigurationFromProfile {
               username = "xgroleau";
-              profile = nix-dotfiles.profiles.desktop;
+              profile = nix-dotfiles.profiles."${hostConfig.profile}";
             })
           ];
         }) hosts;

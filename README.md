@@ -17,3 +17,6 @@ My old Ideapad Y580 from 2012. A thick boy but still fully functionning. NixOS g
 
 ### Mothra
 My main tower for development, work and games.
+
+### Rodan
+The free oracle A1 vm tier. For doing random projects.

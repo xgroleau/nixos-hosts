@@ -4,6 +4,8 @@
   imports = [ ../base-config.nix ./hardware-configuration.nix ];
 
   config = {
+    profile = "desktop";
+    
     # Use the systemd-boot EFI boot loader.
     boot = {
       loader = {
