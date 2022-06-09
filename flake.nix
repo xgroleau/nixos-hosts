@@ -2,17 +2,24 @@
   description = "My nixos configurations";
 
   inputs = {
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-dotfiles = {
       url = "github:xgroleau/nix-dotfiles/main";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, nix-dotfiles, flake-utils }:
+  outputs = { self, nixpkgs, nix-dotfiles, flake-utils, ... }:
     let
       hosts = import ./hosts;
 
@@ -21,7 +28,10 @@
       nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit lib; };
+          specialArgs = {
+            inherit lib;
+            inherit nix-dotfiles;
+          };
           modules = [ hostConfig ./modules ];
         }) hosts;
     }

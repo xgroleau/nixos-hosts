@@ -6,26 +6,27 @@ let cfg = config.modules.home;
 in {
 
   options.modules.home = with types; {
-    profile = mkOpt {
+    profile = mkOption {
       type = nullOr str;
       default = null;
       description = ''
-        The name of the home nix-dotfiles
+        The profile used for the nix-dotfiles
       '';
     };
-    username = mkOpt {
+    username = mkOption {
       type = nullOr str;
       default = null;
       description = ''
-        The username of the home nix-dotfiles
+        The username of the nix-dotfiles
       '';
     };
   };
 
-  imports = mkIf (cfg.profile != null) [
+  imports = [
     (nix-dotfiles.utils.core.nixosConfigurationFromProfile {
-      username = cfg.username;
-      profile = nix-dotfiles.profiles."${cfg.profile}";
+      username = "xgroleau";
+      profile = nix-dotfiles.profiles.desktop;
     })
   ];
+
 }
