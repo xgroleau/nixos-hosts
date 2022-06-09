@@ -22,14 +22,7 @@
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit lib; };
-          modules = [
-            hostConfig
-            ./modules
-            (nix-dotfiles.utils.core.nixosConfigurationFromProfile {
-              username = "xgroleau";
-              profile = nix-dotfiles.profiles."${hostConfig.profile}";
-            })
-          ];
+          modules = [ hostConfig ./modules ];
         }) hosts;
     }
 

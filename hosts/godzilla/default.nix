@@ -4,8 +4,11 @@
   imports = [ ../base-config.nix ./hardware-configuration.nix ];
 
   config = {
-    profile = "desktop";
-    
+    modules = {
+      networking.kdeconnect.enable = true;
+      home.profile = "desktop";
+    };
+
     # Use the systemd-boot EFI boot loader.
     boot = {
       loader = {
