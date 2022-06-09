@@ -1,7 +1,16 @@
 {
-  godzilla = import ./godzilla;
+  godzilla = {
+    system = "x86_64-linux";
+    cfg = import ./godzilla;
+  };
 
-  mothra = import ./mothra;
+  mothra = {
+    system = "x86_64-linux";
+    cfg = import ./mothra;
+  };
 
-  rodan = import ./rodan;
+  rodan = {
+    system = "x86_64-linux";
+    cfg = import ./rodan;
+  };
 }

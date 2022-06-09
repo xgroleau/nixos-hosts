@@ -3,7 +3,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -27,12 +27,12 @@
     in {
       nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          system = hostConfig.system;
           specialArgs = {
             inherit lib;
             inherit nix-dotfiles;
           };
-          modules = [ hostConfig ./modules ];
+          modules = [ hostConfig.cfg ./modules ];
         }) hosts;
     }
 
