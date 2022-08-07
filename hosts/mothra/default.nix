@@ -52,7 +52,5 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    system.stateVersion = "21.11";
   };
 }

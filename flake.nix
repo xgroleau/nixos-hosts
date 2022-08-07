@@ -3,17 +3,11 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix-dotfiles = {
       url = "github:xgroleau/nix-dotfiles/main";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
 
     flake-utils.url = "github:numtide/flake-utils";

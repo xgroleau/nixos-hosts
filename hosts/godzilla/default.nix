@@ -48,7 +48,5 @@
       support32Bit = true;
     };
 
-    system.stateVersion = "21.11";
-
   };
 }
