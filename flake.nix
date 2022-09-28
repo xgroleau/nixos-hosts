@@ -21,7 +21,7 @@
     in {
       nixosConfigurations = lib.mapAttrs (hostName: hostConfig:
         nixpkgs.lib.nixosSystem {
-          system = hostConfig.system;
+          inherit (hostConfig) system;
           specialArgs = {
             inherit lib;
             inherit nix-dotfiles;
