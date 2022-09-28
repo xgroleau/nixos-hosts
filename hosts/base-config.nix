@@ -17,6 +17,7 @@
           # For embedded
           stlink
           openocd
+          libsigrok
         ];
       };
     };
@@ -33,7 +34,6 @@
         initialPassword = "nixos";
         extraGroups = [
           "wheel"
-
           "audio"
           "networkmanager"
 
