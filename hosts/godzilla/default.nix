@@ -41,11 +41,17 @@
       };
     };
 
+    hardware.bluetooth.enable = true;
+    services.blueman.enable = true;
+    # For broadcom ble chip
+    hardware.enableAllFirmware = true;
+
     # Enable sound.
-    sound.enable = true;
-    hardware.pulseaudio = {
+    services.pipewire = {
       enable = true;
-      support32Bit = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
 
   };
