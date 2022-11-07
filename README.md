@@ -1,4 +1,6 @@
 # NixOS hosts configuration
+> This repo is not maintained anymore. It was merged with [nix-dotfiles](https://github.com/xgroleau/nix-dotfiles) to ease host and configuraiton management. Seperating them was a bit pointless and added overhead when modifying configurations.
+
 The configurations for to manage my different hosts on NixOS.
 
 This uses my [Nix dotfiles](https://github.com/xgroleau/nix-dotfiles) to manage user configurations.
